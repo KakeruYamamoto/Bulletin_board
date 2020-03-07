@@ -1,2 +1,33 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="text-center">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+          <h1 class="display-3">５ちゃんねる</h1>
+      </div>
+  </div>
+  <p id="notice"><%= notice %></p>
+
+  <div class="container-fluid">
+    <div class="contents mx-auto">
+      <div class="row center-block" >
+        <% @posts.each do |post| %>
+        <div class="card-deck col-sm-6 col-md-3 mt-5" id="event_card3" >
+         <div class="card img-thumbnail">
+           <%= link_to post,class: "event_link" do %>
+            <div class="card-body px-2 py-3">
+              <h4 class="card-title"><%= post.title.truncate(20) %></h4>
+              <p class="card-text"><%= post.content.truncate(30) %></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="paginate" id="event_list" >
+  <%# <%= paginate @posts %> %>
+</div>

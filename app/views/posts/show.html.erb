@@ -1,2 +1,35 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="text-center">
+  <div class="container">
+
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>
+      <%= @post.title %>
+    </h1>
+
+    <!-- <p>
+      <strong>ラベル：</strong>
+      <span class="labels">
+        <%# <% @post.labels.each do |label| %> %>
+        <%# <%= label.name %> %>
+        <%# <% end %> %>
+      </span>
+    </p> -->
+
+    <p>
+      <strong>すれっど内容</strong>
+      <br>
+      <%= @post.content %>
+    </p>
+
+
+      <%# <% if @post.user_id == current_user.id %> %>
+        <p><%= link_to '編集', edit_post_path(@post),class: "btn btn-outline-danger" %></p>
+      <%# <% end %> %>
+
+
+    <p><%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %></p>
+
+  </div>
+</div>

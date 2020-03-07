@@ -1,2 +1,9 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="text-center">
+  <br>
+  <h1>新しくすれっどを作成する</h1>
+  <br>
+  <%= render 'form', post: @post %>
+  <%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %>
+  <br>
+  <br>
+</div>

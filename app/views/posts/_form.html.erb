@@ -1,0 +1,48 @@
+<div class="text-center">
+  <div class="container">
+    <%= form_with(model: post, local: true) do |form| %>
+      <br>
+
+    <% if post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(post.errors.count, "件") %> のエラーにより、このすれっどを保存できませんでした</h2>
+          <ul>
+            <% post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <br>
+
+      <div class="row justify-content-center">
+        <%= form.label :title,class: "sr-only" %>
+        <%= form.text_field :title, autocomplete: "title" ,class: "form-control",id: "inputUser",placeholder: "すれっどタイトル" %>
+      </div>
+
+      <br>
+
+      <div class="row justify-content-center">
+        <%= form.label :content,class: "sr-only" %>
+        <%= form.text_area :content , autocomplete: "content" ,class: "form-control",id: "exampleFormControlTextarea1",rows: "10",placeholder: "すれっど詳細を記述してください。" %>
+      </div>
+
+      <!-- <br>
+
+      <div class="row justify-content-center">
+        <%# <%= form.collection_check_boxes(:label_ids, Label.all, :id, :name) %> %>
+      </div> -->
+
+      <br>
+
+      <div class="row justify-content-center col-xs-3">
+        <br>
+        <%= form.submit "登録する",class: "btn btn-lg btn-primary " if  action_name == 'new' %>
+        <%= form.submit "登録する",class: "btn btn-lg btn-primary " , data: { confirm: 'この内容でよろしいですか？' } if action_name == 'edit' %>
+      </div>
+
+      <br>
+    <% end %>
+  </div>
+</div>
