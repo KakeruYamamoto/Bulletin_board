@@ -12,6 +12,8 @@ class PostsController < ApplicationController
   # end
 
   def show
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
 
   def new
@@ -72,7 +74,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title)
   end
 
   def search_params

@@ -1,0 +1,10 @@
+<ul class="comments text-left">
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <p>名前：<%= comment.name %>：<%= comment.created_at %></p>
+        <p><%= comment.content %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

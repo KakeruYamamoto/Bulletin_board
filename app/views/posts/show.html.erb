@@ -3,33 +3,18 @@
 
 
     <p id="notice"><%= notice %></p>
-
-    <h1>
-      <%= @post.title %>
-    </h1>
-
-    <!-- <p>
-      <strong>ラベル：</strong>
-      <span class="labels">
-        <%# <% @post.labels.each do |label| %> %>
-        <%# <%= label.name %> %>
-        <%# <% end %> %>
-      </span>
-    </p> -->
-
-    <p>
-      <strong>すれっど内容</strong>
-      <br>
-      <%= @post.content %>
-    </p>
+    <div class="post_area">
+      <h1>
+        <%= @post.title %>
+      </h1>
+      <hr>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
+      </div>
+      <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
 
 
-      <%# <% if @post.user_id == current_user.id %> %>
-        <p><%= link_to '編集', edit_post_path(@post),class: "btn btn-outline-danger" %></p>
-      <%# <% end %> %>
-
-
-    <p><%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %></p>
-
+      <p><%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %></p>
+    </div>
   </div>
 </div>

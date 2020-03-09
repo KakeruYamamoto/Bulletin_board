@@ -6,28 +6,29 @@
   </div>
   <p id="notice"><%= notice %></p>
 
-  <div class="container-fluid">
-    <div class="contents mx-auto">
-      <div class="row center-block" >
+  <div class="mx-auto" style="width: 60%;">
+    <table class="bg-white text-center table table-bordered mb-0 mt-3">
+      <tbody>
         <% @posts.each do |post| %>
-        <div class="card-deck col-sm-6 col-md-3 mt-5" id="event_card3" >
-         <div class="card img-thumbnail">
-           <%= link_to post,class: "event_link" do %>
-            <div class="card-body px-2 py-3">
-              <h4 class="card-title"><%= post.title.truncate(20) %></h4>
-              <p class="card-text"><%= post.content.truncate(30) %></p>
+        <tr style="border: 2px solid #d2d2d2;">
+          <td scope="row">
+            <div class="pl-5">
+              <%= link_to post,class: "event_link" do %>
+                <h4><%= post.title.truncate(20) %><span class="ml-3 h6"></span></h4>
+              <% end %>
             </div>
-            <% end %>
-          </div>
-        </div>
+          </td>
+        </tr>
         <% end %>
-      </div>
-    </div>
+      </tbody>
+    </table>
   </div>
 </div>
+
+
 
 <br>
 
 <div class="paginate" id="event_list" >
-  <%# <%= paginate @posts %> %>
+  <%# <%= paginate @posts %> 
 </div>
