@@ -6,22 +6,34 @@
   </div>
   <p id="notice"><%= notice %></p>
 
-  <div class="mx-auto" style="width: 60%;">
-    <table class="bg-white text-center table table-bordered mb-0 mt-3">
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr style="border: 2px solid #d2d2d2;">
-          <td scope="row">
-            <div class="pl-5">
-              <%= link_to post,class: "event_link" do %>
-                <h4><%= post.title.truncate(20) %><span class="ml-3 h6"></span></h4>
-              <% end %>
-            </div>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+<div class="row">
+
+  <div class="flex-column col-md-2">
+    <ul class="side_menu flex-column nav nav-pills nav-stacked">
+      <li><a href="#">ダッシュボード</a></li>
+      <li><a href="#">サーバー１</a></li>
+      <li><a href="#">サーバー２</a></li>
+      <li><a href="#">サーバー３</a></li>
+    </ul>
+  </div>
+
+    <div class="col-xs-9 offset-md-1" style="width: 60%;">
+      <table class="bg-white text-center table table-bordered mb-0 mt-3">
+        <tbody>
+          <% @posts.each do |post| %>
+          <tr style="border: 2px solid #d2d2d2;">
+            <td scope="row">
+              <div class="pl-5">
+                <%= link_to post,class: "event_link" do %>
+                  <h4><%= post.title.truncate(20) %><span class="ml-3 h6"></span></h4>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -30,5 +42,5 @@
 <br>
 
 <div class="paginate" id="event_list" >
-  <%# <%= paginate @posts %> 
+  <%# <%= paginate @posts %>
 </div>

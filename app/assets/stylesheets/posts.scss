@@ -5,18 +5,20 @@
 .post_area {
   background-color: white;
   padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 #comments_area {
   background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-post_index {
+
+
+.side_menu {
   background-color: white;
-
-}
-
-aside {
-  float: left;
-
+  border: 2px solid #d2d2d2;
+  padding: 5px;
 }
