@@ -15,16 +15,14 @@
 
   <body>
     <div class="container-fluid" id="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <%= link_to "５ちゃんねる", posts_path, class:"navbar-brand" %>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarForm" aria-controls="navbarForm" aria-expanded="false" aria-label="ナビゲーションの切替">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarForm">
           <ul class="navbar-nav">
-
           <% if user_signed_in? %>
-
             <li class="nav-item">
               <%= link_to "すれっど一覧", posts_path, class:"nav-link" %>
             </li>
@@ -34,9 +32,7 @@
             <li class="nav-item">
               <%= link_to "新規すれっど作成", new_post_path, class:"nav-link" %>
             </li>
-
           <% else %>
-
             <li class="nav-item">
               <%= link_to "すれっど一覧", posts_path, class:"nav-link" %>
             </li>
@@ -46,22 +42,18 @@
             <li class="nav-item">
               <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
             </li>
-
           <% end %>
           </ul>
-            <%# <%= render 'posts/search_form' %> %>
+            <%# <%= render 'posts/search_form' %>
         </div>
       </nav>
-
       <%= yield %>
       <footer class="footer">
       <p>© 2000 - 2019 ５ちゃんねる Corp.</p>
       </footer>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
   </body>
 </html>

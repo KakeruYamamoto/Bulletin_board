@@ -28,8 +28,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = current_user.posts.build(post_params)
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    # @post = Post.new(post_params)
 
     if params[:back]
         render :new
@@ -52,10 +52,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # if current_user.id == @post.user.id
+    if current_user.id == @post.user.id
       @post.destroy
       redirect_to posts_path, notice:"スレッドを削除しました！"
-    # end
+    end
   end
 
   def new_guest

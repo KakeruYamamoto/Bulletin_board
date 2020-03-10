@@ -1,5 +1,9 @@
 <div class="text-center">
   <div class="container">
+    <% require 'date' %>
+    <% date = Date.today %>
+    <% weeks = ["月","火","水","木","金","土","日"] %>
+    <% index = date.strftime("%u").to_i %>
     <br>
     <h1>ようこそ<%= @user.name %>さん</h1>
     <br>
@@ -18,12 +22,9 @@
           <tr>
             <th>すれっど</th>
             <th>つくった日</th>
-            <th></th>
-            <th></th>
             <th colspan="2"></th>
           </tr>
         </thead>
-
         <tbody>
           <% @users.each do |post| %>
             <tr>
@@ -33,9 +34,10 @@
               <td><%= link_to '詳細', post, class: "btn btn-outline-secondary"  %></td>
             </tr>
         <% end %>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
     <% end %>
+    <br>
   <%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %>
   </div>
   <br>
