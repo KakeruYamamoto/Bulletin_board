@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :render_index]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
     @posts = Post.all#.per(12)
   end
 
-  # def search
-  #    @q = Post.search(search_params)
-  #    @posts = @q.result(distinct: true)
-  # end
+  def search
+     @q = Post.search(search_params)
+     @posts = @q.result(distinct: true)
+  end
 
   def show
     @comments = @post.comments

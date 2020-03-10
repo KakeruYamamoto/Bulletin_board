@@ -15,5 +15,8 @@ module TestBulletinBoard
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.load_defaults 5.1
+    config.i18n.default_locale = :ja
+
   end
 end

@@ -22,6 +22,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
   gem 'redcarpet'
   gem 'rouge'
   gem 'rails-i18n'
+  gem 'devise-i18n'
 
 # Backend
   gem 'ransack'
@@ -66,6 +67,7 @@ group :development do
   gem 'letter_opener_web'
   gem 'bcrypt_pbkdf'
   gem "rails-erd"
+  gem 'letter_opener_web'
 end
 
 group :test do

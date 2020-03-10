@@ -1,0 +1,49 @@
+<div class="text-center">
+  <div class="container">
+    <br>
+    <h2>プロフィール編集</h2>
+    <br>
+    <%= form_for(resource, as: resource_name,class:"form-signin", url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="row justify-content-center">
+        <%= f.label :name,class: "sr-only" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" ,class: "form-control",id: "inputUser",placeholder: "お名前" %>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <%= f.label :email,class: "sr-only" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "form-control",id: "inputUser",placeholder: "メールアドレス" %>
+      </div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>現在の確認待ち： <%= resource.unconfirmed_email %></div>
+      <% end %>
+      <br>
+      <div class="row justify-content-center">
+        <%= f.label :password,class: "sr-only" %>
+        <% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "new-password",class: "form-control",id: "inputUser",placeholder: "変更パスワード (#{@minimum_password_length}文字以上) " %>
+        <% end %>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <%= f.label :password_confirmation,class: "sr-only" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control",id: "inputUser",placeholder: "確認用パスワード(変更しない場合は空白)" %>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <%= f.label :current_password ,class: "sr-only" %>
+        <%= f.password_field :current_password, autocomplete: "current-password",class: "form-control",id: "inputUser",placeholder: "現在のパスワード" %>
+      </div>
+      <br>
+      <div class="row justify-content-center col-xs-3">
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+    <br>
+    <h3>アカウント削除</h3>
+    <br>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class: "btn btn-outline-danger" %>
+    <br>
+    <%= link_to "戻る", :back %>
+  </div>
+</div>

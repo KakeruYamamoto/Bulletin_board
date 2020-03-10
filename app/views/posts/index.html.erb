@@ -26,6 +26,14 @@
               <div class="pl-5">
                 <%= link_to post,class: "event_link" do %>
                   <h4><%= post.title.truncate(20) %><span class="ml-3 h6"></span></h4>
+
+                  <%# レスの検索材料 %>
+                  <% if post.comments.present? %>
+                    <% post.comments.each do |comment| %>
+                      <% comment %>
+                    <% end %>
+                  <% end %>
+
                 <% end %>
               </div>
             </td>
