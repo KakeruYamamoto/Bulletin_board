@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
     if params[:back]
       @post = Post.new(post_params)
     else
@@ -29,8 +30,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    # @post = Post.new(post_params)
-
     if params[:back]
         render :new
       else
@@ -41,7 +40,6 @@ class PostsController < ApplicationController
       end
     end
   end
-
 
   def update
     if @post.update(post_params)
@@ -74,7 +72,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title)
+    params.require(:post).permit(:title, label_ids: [])
   end
 
   def search_params
