@@ -1,13 +1,13 @@
 <div class="text-center">
-  <div class="container">
+  <div class="search_resolt container">
 
     <br>
     <h2>検索結果</h2>
+    <hr>
     <table id="event_list" >
       <thead>
         <tr>
           <th>タイトル</th>
-          <th>コンテンツ</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -16,12 +16,11 @@
         <% @posts.each do |post| %>
         <tr>
           <td><%= post.title %></td>
-          <td><%= post.content %></td>
           <td><%= link_to '詳細', post ,class: "btn btn-outline-secondary"%></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <%= link_to '戻る', posts_path,class: "btn btn-outline-secondary" %>
+    <%= link_to '戻る', :back,class: "btn btn-outline-secondary" %>
   </div>
 </div>
