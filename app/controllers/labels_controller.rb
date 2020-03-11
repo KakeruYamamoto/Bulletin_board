@@ -3,7 +3,6 @@ class LabelsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # @labels = Label.all
     if params[:label_id] == "1"
       @label = Label.find(1)
       @post = @label.posts
