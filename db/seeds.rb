@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#ラベル
+  Label.create!(name: "国内")
+  Label.create!(name: "国際")
+  Label.create!(name: "経済")
+  Label.create!(name: "エンタメ")
+  Label.create!(name: "スポーツ")
+  Label.create!(name: "IT")
+  Label.create!(name: "科学")
+  Label.create!(name: "ライフ")
+  Label.create!(name: "地域")
 
 # ユーザ生成
   30.times do |n|

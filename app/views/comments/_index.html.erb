@@ -6,7 +6,7 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <p>名前：<%= comment.name %>：<%= comment.created_at.strftime("%Y年%-m月%-d日 #{weeks[index - 1]}曜日 %-H時%-M分") %></p>
+        <p>名前：<%= comment.name %>：<%= comment.created_at.strftime("%Y年%-m月%-d日 #{weeks[index - 1]}曜日 %-H時%-M分") %> </p>
         <p><%= comment.content %></p>
       </li>
     <% end %>
