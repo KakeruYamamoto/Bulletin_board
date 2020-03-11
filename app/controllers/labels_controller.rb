@@ -3,7 +3,43 @@ class LabelsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @labels = Label.all
+    # @labels = Label.all
+    if params[:label_id] == "1"
+      @label = Label.find(1)
+      @post = @label.posts
+    end
+    if params[:label_id] == "2"
+      @label = Label.find(2)
+      @post = @label.posts
+    end
+    if params[:label_id] == "3"
+      @label = Label.find(3)
+      @post = @label.posts
+    end
+    if params[:label_id] == "4"
+      @label = Label.find(4)
+      @post = @label.posts
+    end
+    if params[:label_id] == "5"
+      @label = Label.find(5)
+      @post = @label.posts
+    end
+    if params[:label_id] == "6"
+      @label = Label.find(6)
+      @post = @label.posts
+    end
+    if params[:label_id] == "7"
+      @label = Label.find(7)
+      @post = @label.posts
+    end
+    if params[:label_id] == "8"
+      @label = Label.find(8)
+      @post = @label.posts
+    end
+    if params[:label_id] == "9"
+      @label = Label.find(9)
+      @post = @label.posts
+    end
   end
 
   def show

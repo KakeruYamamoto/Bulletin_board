@@ -1,0 +1,31 @@
+<div class="text-center">
+  <div class="search_resolt container">
+
+    <br>
+    <h2><%= @label.name %></h2>
+    <hr>
+    <% if  @post.empty? %>
+      <p>すれっどはありません</p>
+    <% else %>
+      <table id="event_list" >
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @post.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= link_to '詳細', post ,class: "btn btn-outline-secondary"%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <br>
+    <%= link_to '戻る', :back,class: "btn btn-outline-secondary" %>
+  </div>
+</div>

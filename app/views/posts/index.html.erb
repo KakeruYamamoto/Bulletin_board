@@ -10,10 +10,15 @@
 
   <div class="flex-column col-md-2">
     <ul class="side_menu flex-column nav nav-pills nav-stacked">
-      <li><a href="#">ダッシュボード</a></li>
-      <li><a href="#">サーバー１</a></li>
-      <li><a href="#">サーバー２</a></li>
-      <li><a href="#">サーバー３</a></li>
+      <li><%= link_to "国内" ,labels_index_path(label_id: 1) %></li>
+      <li><%= link_to "国際" ,labels_index_path(label_id: 2) %></li>
+      <li><%= link_to "経済" ,labels_index_path(label_id: 3) %></li>
+      <li><%= link_to "エンタメ" ,labels_index_path(label_id: 4) %></li>
+      <li><%= link_to "スポーツ" ,labels_index_path(label_id: 5) %></li>
+      <li><%= link_to "IT" ,labels_index_path(label_id: 6) %></li>
+      <li><%= link_to "科学" ,labels_index_path(label_id: 7) %></li>
+      <li><%= link_to "ライフ" ,labels_index_path(label_id: 8) %></li>
+      <li><%= link_to "地域" ,labels_index_path(label_id: 9) %></li>
     </ul>
   </div>
 
