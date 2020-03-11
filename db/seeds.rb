@@ -29,19 +29,19 @@
 #ユーザのスレッド１
   num = 0
 
-  # test_user1 = User.create(name: "test_user1",
-  #   email: email1,
-  #   password: password,
-  #   password_confirmation: password,
-  # )
-  # 10.times do |n|
-  #   n_rand = rand(1..9)
-  #   num += 1
-  #   title = Faker::Game.title
-  #   I18n.locale = 'ja'
-  #   posts1 = test_user1.posts.build(title: title,label_ids: "#{n_rand}")
-  #   posts1.save
-  # end
+  test_user1 = User.create(name: "test_user1",
+    email: email1,
+    password: password,
+    password_confirmation: password,
+  )
+  10.times do |n|
+    n_rand = rand(1..9)
+    num += 1
+    title = Faker::Game.title
+    I18n.locale = 'ja'
+    posts1 = test_user1.posts.build(title: title,label_ids: "#{n_rand}")
+    posts1.save
+  end
 
 #ユーザのスレッド２
   test_user2 = User.create(name: "test_user2",
@@ -73,13 +73,13 @@
     posts3.save
   end
 
-# #ラベル
-#   Label.create!(name: "国内")
-#   Label.create!(name: "国際")
-#   Label.create!(name: "経済")
-#   Label.create!(name: "エンタメ")
-#   Label.create!(name: "スポーツ")
-#   Label.create!(name: "IT")
-#   Label.create!(name: "科学")
-#   Label.create!(name: "ライフ")
-#   Label.create!(name: "地域")
+#ラベル
+  Label.create!(name: "国内")
+  Label.create!(name: "国際")
+  Label.create!(name: "経済")
+  Label.create!(name: "エンタメ")
+  Label.create!(name: "スポーツ")
+  Label.create!(name: "IT")
+  Label.create!(name: "科学")
+  Label.create!(name: "ライフ")
+  Label.create!(name: "地域")
